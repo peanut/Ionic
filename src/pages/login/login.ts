@@ -24,15 +24,15 @@ export class LoginPage {
         alert("请输入密码");
     } else {
         this.http.get("http://datainfo.duapp.com//shopdata/userinfo.php").subscribe(data => {
-          // if(data == 0) {
-          //   alert("用户名不存在");
-          // } else if (data == 1) {
-          //   alert("账户与密码不符"); 
-          // } else {
-          //   let userinfo: string = '用户名：' + username.value + '密码：' + password.value;
-          //   alert(userinfo);
-          //   this.navCtrl.push(TabsPage);
-          // }
+          if(data == 0) {
+            alert("用户名不存在");
+          } else if (data == 1) {
+            alert("账户与密码不符"); 
+          } else {
+            let userinfo: string = '用户名：' + username.value + '密码：' + password.value;
+            alert(userinfo);
+            this.navCtrl.push(TabsPage);
+          }
         });
     }
   }
